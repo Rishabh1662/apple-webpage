@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* Common Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  outline: none;
+  text-decoration: none;
+  font-family: "Work Sans", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary-color: #6edae6;
+  --white-color: #fff;
+  --black-color: #000;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* End of Common Styles */
+
+/* section */
+.section-1 {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  clip-path: polygon(100% 0, 100% 95%, 38% 100%, 0 100%, 0 0);
+  position: relative;
+}
+
+/* logo */
+.logo {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+}
+
+.logo i {
+  font-size: 10rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+/* End of Logo */
+
+/* Navbar */
+.navbar {
+  position: absolute;
+  top: 3rem;
+  right: 10%;
+}
+.navbar-link {
+  font-size: 2rem;
+  display: inline-block;
+  margin: 0 3rem;
+  color: var(--black-color);
+  transition: transform 0.5s;
+}
+
+.navbar-link:hover {
+  transform: scale(1.1);
+}
+
+/* End of Navbar */
+
+/* Cube */
+
+.cube-wrapper {
+  perspective: 100rem;
+  background-color: #000;
+}
+
+.cube {
+  width: 30rem;
+  height: 55rem;
+  transform-style: preserve-3d;
+  transform: rotateX(0) rotateY(15deg) rotateZ(0);
+  position: relative;
+  top: -2rem;
+  transition: transform 0.5s;
+}
+
+.front-side,
+.back-side {
+  width: 100%;
+  height: 100%;
+  background-color: #fee;
+  position: absolute;
+  transform-style: preserve-3d;
+  box-shadow: inset 0.1rem 0.1rem 0.1rem #ddd, inset -0.1rem -0.1rem 0.1rem #ddd;
+}
+
+.front-side {
+  padding: 2.5rem;
+  transform: translateZ(5rem);
+}
+
+.front-side::before,
+.front-side::after {
+  content: "";
+  width: 100%;
+  height: 10rem;
+  background-color: #fee;
+  position: absolute;
+  box-shadow: inset 0.1rem 0.1rem 0.1rem #ddd, inset -0.1rem -0.1rem 0.1rem #ddd;
+}
+
+.front-side::before {
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+  transform-origin: top;
+}
+
+.front-side::after {
+  bottom: 0;
+  left: 0;
+  transform: rotate(90deg);
+  transform-origin: bottom;
+}
+
+.front-side::after {
+  bottom: 0;
+}
